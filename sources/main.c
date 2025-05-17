@@ -6,140 +6,86 @@
 /*   By: miyolchy <miyolchy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 18:43:46 by miyolchy          #+#    #+#             */
-/*   Updated: 2025/05/17 20:17:26 by miyolchy         ###   ########.fr       */
+/*   Updated: 2025/05/17 21:55:42 by miyolchy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/headers/push_swap.h"
 
-void	free_char_array(char **array)
+void free_array(char **array)
 {
-	int	i;
-
-	i = 0;
-	while (array[i])
-	{
-		free(array[i]);
-		i++;
-	}
-	free(array);
+    int index = 0;
+    if (array)
+    {
+        while (array[index])
+        {
+            free(array[index]);
+            index++;
+        }
+        free(array);
+    }
 }
 
-void	free_int_array(int **array)
+int main(int argc, char **argv)
 {
-	int	i;
+    char **args_chars_array;
+    char **args_chars_tmp_array;
+    int total_numbers = 0;
+    int index1, index2, i, j;
 
-	i = 0;
-	while (array[i])
-	{
-		free(array[i]);
-		i++;
-	}
-	free(array);
-}
+    if (argc < 2)
+        return (ft_printf("Error: No arguments provided\n"), 1);
 
-bool	has_duplicates(int *array, int size)
-{
-	int	i;
-	int	j;
+    i = 1;
+    while (i < argc)
+    {
+        args_chars_tmp_array = ft_split(argv[i], ' ');
+        if (!args_chars_tmp_array)
+            return (ft_printf("Error: ft_split failed\n"), 1);
+        j = 0;
+        while (args_chars_tmp_array[j])
+            j++;
+        total_numbers += j;
+        free_array(args_chars_tmp_array);
+        i++;
+    }
 
-	i = 0;
-	while (i < size - 1)
-	{
-		j = i + 1;
-		while (j < size)
-		{
-			if (array[i] == array[j])
-				return (true);
-			j++;
-		}
-		i++;
-	}
-	return (false);
-}
+    // Выделяем память под массив всех чисел
+    args_chars_array = malloc(sizeof(char *) * (total_numbers + 1));
+    if (!args_chars_array)
+        return (ft_printf("Error: args_chars_array malloc failed\n"), 1);
 
-bool	is_valid_arg(char *argv)
-{
-	int			index;
-	int			i;
-	char		**char_array;
-	int			count;
-	int			*int_array;
-	
-	char_array = ft_split(argv, ' ');
-	index = 0;
-	while (char_array[index] != NULL)
-	{
-		count++;
-		index++;
-	}
-	if (count < 1)
-	{
-		free_char_array(char_array);
-		ft_printf("Invalid count args\n");
-		return (false);
-	}
-	int_array = (int *)malloc(count * sizeof(int));
-	if (int_array == NULL)
-	{
-		ft_printf("Error int arrays malloc\n");
-		free_char_array(char_array);
-		return (false);
-	}
-	index = 0;
-	while (index < count)
-	{
-		int_array[index] = ft_atoi(char_array[index]);
-		if (int_array[index] == 0)
-		{
-			i = 0;
-			if (char_array[index][i] == '-' || char_array[index][i] == '+')
-				i++;
-			if (!ft_isdigit(char_array[index][i]))
-			{
-				ft_printf("%s is invalid argument\n", char_array[index]);
-				free_char_array(char_array);
-				free(int_array);
-				return (false);
-			}
-			while (char_array[index][i])
-			{
-				if (!ft_isdigit(char_array[index][i]))
-				{
-					ft_printf("%s is invalid argument\n", char_array[index]);
-					free_char_array(char_array);
-					free(int_array);
-					return (false);
-				}
-				i++;
-			}
-		}
-		ft_printf("%d\n", int_array[index]);
-		index++;
-	}
-	if (has_duplicates(int_array, count) == true)
-	{
-		free_char_array(char_array);
-		free(int_array);
-		return (false);	
-	}
-	free_char_array(char_array);
-	free(int_array);
-	return (true);
-}
+    // Заполняем массив
+    index1 = 0;
+    i = 1;
+    while (i < argc)
+    {
+        args_chars_tmp_array = ft_split(argv[i], ' ');
+        if (!args_chars_tmp_array)
+        {
+            free_array(args_chars_array);
+            return (ft_printf("Error: ft_split failed\n"), 1);
+        }
+        index2 = 0;
+        while (args_chars_tmp_array[index2])
+        {
+            args_chars_array[index1] = args_chars_tmp_array[index2];
+            index1++;
+            index2++;
+        }
+        free(args_chars_tmp_array); // Освобождаем только массив, строки перенесены
+        i++;
+    }
+    args_chars_array[index1] = NULL; // Завершаем массив NULL
 
-int	main(int argc, char **argv)
-{
-	if (argc != 2)
-	{
-		ft_printf("Invalid args count\n");
-		return (1);
-	}
-	if (is_valid_arg(argv[1]) == false)
-	{
-		ft_printf("Invalid argv\n");
-		return (1);
-	}
-	ft_printf("Valid arguments\n");
-	return (0);
+    // Выводим результат
+    index1 = 0;
+    while (args_chars_array[index1])
+    {
+        ft_printf("%s\n", args_chars_array[index1]);
+        index1++;
+    }
+
+    free_array(args_chars_array);
+    return (0);
 }
