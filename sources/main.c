@@ -6,7 +6,7 @@
 /*   By: miyolchy <miyolchy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 18:43:46 by miyolchy          #+#    #+#             */
-/*   Updated: 2025/05/31 19:06:54 by miyolchy         ###   ########.fr       */
+/*   Updated: 2025/05/31 20:57:13 by miyolchy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,12 @@ int main(int argc, char **argv)
 	args_chars_array = NULL;
 	args_chars_array = creating_array(argc, argv, args_chars_array);
 
+	if (validity_check(args_chars_array) == false)
+	{
+		free_array(args_chars_array);
+		return (1);
+	}
+
     // Выводим результат
     index = 0;
     while (args_chars_array[index])
@@ -33,7 +39,7 @@ int main(int argc, char **argv)
         index++;
     }
 	ft_printf("%s\n", args_chars_array[index]);
-	
+
     free_array(args_chars_array);
     return (0);
 }
