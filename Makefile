@@ -11,7 +11,7 @@ LIBRARIES_DIR = includes/libraries
 LIBFT_DIR = $(LIBRARIES_DIR)/libft
 FT_PRINTF_DIR = $(LIBRARIES_DIR)/ft_printf
 
-SOURCES = $(SOURCES_DIR)/main.c
+SOURCES = $(SOURCES_DIR)/main.c $(SOURCES_DIR)/free.c $(SOURCES_DIR)/creating_array.c
 
 OBJECTS = $(SOURCES:%.c=%.o)
 
@@ -30,7 +30,7 @@ $(NAME): $(OBJECTS) $(LIBFT) $(FT_PRINTF)
 
 $(LIBFT):
 	@$(MAKE) -C $(LIBFT_DIR) all
-
+	@$(MAKE) -C $(LIBFT_DIR) bonus
 
 $(FT_PRINTF):
 	@$(MAKE) -C $(FT_PRINTF_DIR) all

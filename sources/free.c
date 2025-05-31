@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   free.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: miyolchy <miyolchy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/17 18:43:49 by miyolchy          #+#    #+#             */
-/*   Updated: 2025/05/31 19:07:42 by miyolchy         ###   ########.fr       */
+/*   Created: 2025/05/31 18:57:15 by miyolchy          #+#    #+#             */
+/*   Updated: 2025/05/31 18:57:19 by miyolchy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "../includes/headers/push_swap.h"
 
-# include "../libraries/libft/libft.h"
-# include "../libraries/ft_printf/ft_printf.h"
-
-# include <stdbool.h>
-
-void free_array(char **array);
-
-char	**creating_array(int argc, char **argv, char **args_chars_array);
-
-#endif
+void free_array(char **array)
+{
+    int index = 0;
+    if (array)
+    {
+        while (array[index])
+        {
+            free(array[index]);
+            index++;
+        }
+        free(array);
+    }
+}
