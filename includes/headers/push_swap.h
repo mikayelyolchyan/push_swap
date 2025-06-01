@@ -6,7 +6,7 @@
 /*   By: miyolchy <miyolchy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 18:43:49 by miyolchy          #+#    #+#             */
-/*   Updated: 2025/05/31 20:57:27 by miyolchy         ###   ########.fr       */
+/*   Updated: 2025/06/01 19:45:25 by miyolchy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,15 @@
 
 # include <stdbool.h>
 
-void	free_array(char **array);
+typedef struct s_data
+{
+	int	number;
+	int	index;
+}	t_data;
+
+void	free_char_array(char **array);
+
+void	free_list(t_list *list);
 
 char	**creating_array(int argc, char **argv, char **args_chars_array);
 

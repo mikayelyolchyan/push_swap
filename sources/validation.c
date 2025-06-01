@@ -6,7 +6,7 @@
 /*   By: miyolchy <miyolchy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/31 20:56:45 by miyolchy          #+#    #+#             */
-/*   Updated: 2025/05/31 20:57:02 by miyolchy         ###   ########.fr       */
+/*   Updated: 2025/06/01 17:28:35 by miyolchy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,9 @@ static bool	all_args_is_numbers(char **array)
 	while (array[index1])
 	{
 		index2 = 0;
+		char_index = array[index1][index2];
+		if (char_index == '-' || char_index == '+')
+			index2++;
 		while (array[index1][index2])
 		{
 			char_index = array[index1][index2];
