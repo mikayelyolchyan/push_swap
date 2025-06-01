@@ -6,7 +6,7 @@
 /*   By: miyolchy <miyolchy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/31 19:06:16 by miyolchy          #+#    #+#             */
-/*   Updated: 2025/05/31 19:27:57 by miyolchy         ###   ########.fr       */
+/*   Updated: 2025/06/01 18:02:03 by miyolchy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static int	counting_numbers(int argc, char **argv)
         while (tmp_array[j])
             j++;
         total_numbers += j;
-        free_array(tmp_array);
+        free_char_array(tmp_array);
         i++;
     }
 	return (total_numbers);
@@ -50,7 +50,7 @@ static char	**fill_array(int argc, char **argv, char **array)
         tmp_array = ft_split(argv[i], ' ');
         if (!tmp_array)
         {
-            free_array(array);
+            free_char_array(array);
             return (ft_printf("Error: ft_split failed\n"), NULL);
         }
         index2 = 0;
