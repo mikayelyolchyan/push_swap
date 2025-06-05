@@ -6,7 +6,7 @@
 /*   By: miyolchy <miyolchy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/31 19:06:16 by miyolchy          #+#    #+#             */
-/*   Updated: 2025/06/01 18:02:03 by miyolchy         ###   ########.fr       */
+/*   Updated: 2025/06/05 20:23:19 by miyolchy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ static char	**fill_array(int argc, char **argv, char **array)
 	return (array);
 }
 
-char	**creating_array(int argc, char **argv, char **array)
+char	**creating_char_array(int argc, char **argv, char **array)
 {
 	int	total_numbers;
 
@@ -85,3 +85,43 @@ char	**creating_array(int argc, char **argv, char **array)
 		return (NULL);
 	return (array);
 }
+
+int	char_array_args_count(char	**array)
+{
+	int	index;
+	
+	index = 0;
+	while (array[index] != NULL)
+		index++;
+	return (index);
+}
+
+int	*creating_int_array(int argc, char **argv, t_array *array)
+{
+	int		index;
+	
+	array->char_args_array = NULL;
+	array->char_args_array = creating_char_array(argc, argv, \
+								array->char_args_array);
+	if (validity_check(array->char_args_array) == false)
+	{
+		free_char_array(array->char_args_array);
+		return (NULL);
+	}
+	array->args_count = char_array_args_count(array->char_args_array);
+	array->int_args_array = (int *)malloc(array->args_count * sizeof(int));
+	if (!array->int_args_array)
+	{
+		free_char_array(array->char_args_array);
+		return (NULL);
+	}
+	index = 0;
+	while (index < array->args_count)
+	{
+		array->int_args_array[index] = ft_atoi(array->char_args_array[index]);
+		index++;
+	}
+	free_char_array(array->char_args_array);
+	return (array->int_args_array);
+}
+
