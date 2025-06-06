@@ -6,7 +6,7 @@
 /*   By: miyolchy <miyolchy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/31 19:06:16 by miyolchy          #+#    #+#             */
-/*   Updated: 2025/06/05 20:23:19 by miyolchy         ###   ########.fr       */
+/*   Updated: 2025/06/05 20:33:18 by miyolchy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,9 @@ static int	counting_numbers(int argc, char **argv)
 
 static char	**fill_array(int argc, char **argv, char **array)
 {
-	int	index1;
-	int	index2;
-	int	i;
+	int		index1;
+	int		index2;
+	int		i;
 	char	**tmp_array;
 	
 	index1 = 0;
@@ -60,11 +60,10 @@ static char	**fill_array(int argc, char **argv, char **array)
             index1++;
             index2++;
         }
-        free(tmp_array); // Освобождаем только массив, строки перенесены
+        free(tmp_array);
         i++;
     }
-    array[index1] = NULL; // Завершаем массив NULL
-
+    array[index1] = NULL;
 	return (array);
 }
 
@@ -73,13 +72,9 @@ char	**creating_char_array(int argc, char **argv, char **array)
 	int	total_numbers;
 
 	total_numbers = counting_numbers(argc, argv);
-
-    // Выделяем память под массив всех чисел
     array = malloc(sizeof(char *) * (total_numbers + 1));
     if (!array)
         return (ft_printf("Error: args_char_array malloc failed\n"), NULL);
-
-    // Заполняем массив
     array = fill_array(argc, argv, array);
 	if (array == NULL)
 		return (NULL);
