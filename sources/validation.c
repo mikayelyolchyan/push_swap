@@ -6,7 +6,7 @@
 /*   By: miyolchy <miyolchy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/31 20:56:45 by miyolchy          #+#    #+#             */
-/*   Updated: 2025/06/01 17:28:35 by miyolchy         ###   ########.fr       */
+/*   Updated: 2025/06/06 22:38:14 by miyolchy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,19 @@ static long long int	char_to_longlongint(const char *nptr)
 	return (result * sign);
 }
 
+static bool	check_all_str(char **array, int index1, int index2, char char_index)
+{
+	while (array[index1][index2])
+	{
+		char_index = array[index1][index2];
+		if (ft_isdigit((int)char_index))
+			index2++;
+		else
+			return (ft_printf("Error, invalid arguments\n"), false);
+	}
+	return (true);
+}
+
 static bool	all_args_is_numbers(char **array)
 {
 	long long int	numbers;
@@ -52,19 +65,11 @@ static bool	all_args_is_numbers(char **array)
 		char_index = array[index1][index2];
 		if (char_index == '-' || char_index == '+')
 			index2++;
-		while (array[index1][index2])
-		{
-			char_index = array[index1][index2];
-			if (ft_isdigit((int)char_index))
-				index2++;
-			else
-				return (ft_printf("Error, invalid arguments\n"), false);
-		}
+		if (check_all_str(array, index1, index2, char_index) == false)
+			return (false);
 		numbers = char_to_longlongint(array[index1]);
 		if (numbers >= INT_MAX || numbers <= INT_MIN)
-		{
-			return (ft_printf("Error, invalid arguments\n"), false);	
-		}
+			return (ft_printf("Error, invalid arguments\n"), false);
 		index1++;
 	}
 	return (true);

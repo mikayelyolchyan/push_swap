@@ -6,7 +6,7 @@
 /*   By: miyolchy <miyolchy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 18:43:49 by miyolchy          #+#    #+#             */
-/*   Updated: 2025/06/05 20:25:37 by miyolchy         ###   ########.fr       */
+/*   Updated: 2025/06/06 22:16:40 by miyolchy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@
 
 # include <stdbool.h>
 
-typedef struct	s_data
+typedef struct s_data
 {
 	int	number;
 	int	index;
 }	t_data;
 
-typedef	struct	s_array
+typedef struct s_array
 {
 	char	**char_args_array;
 	int		*int_args_array;
