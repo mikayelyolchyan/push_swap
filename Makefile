@@ -13,6 +13,7 @@ FT_PRINTF_DIR = $(LIBRARIES_DIR)/ft_printf
 
 SOURCES = $(SOURCES_DIR)/main.c $(SOURCES_DIR)/free.c \
 			$(SOURCES_DIR)/creating_array.c $(SOURCES_DIR)/validation.c \
+			$(SOURCES_DIR)/bubble_sort.c $(SOURCES_DIR)/creating_list.c
 
 OBJECTS = $(SOURCES:%.c=%.o)
 
