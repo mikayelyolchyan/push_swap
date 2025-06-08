@@ -20,7 +20,7 @@ SOURCES = $(SOURCES_DIR)/main.c $(SOURCES_DIR)/free.c \
 			$(INSTRUCTIONS_DIR)/pb.c $(INSTRUCTIONS_DIR)/ra.c \
 			$(INSTRUCTIONS_DIR)/rb.c $(INSTRUCTIONS_DIR)/rr.c \
 			$(INSTRUCTIONS_DIR)/rra.c $(INSTRUCTIONS_DIR)/rrb.c \
-			$(INSTRUCTIONS_DIR)/rrr.c
+			$(INSTRUCTIONS_DIR)/rrr.c $(SOURCES_DIR)/sorting_algorithm/butterfly.c
 
 OBJECTS = $(SOURCES:%.c=%.o)
 
