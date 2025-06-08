@@ -1,29 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sa.c                                               :+:      :+:    :+:   */
+/*   rrb.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: miyolchy <miyolchy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/07 16:13:54 by miyolchy          #+#    #+#             */
-/*   Updated: 2025/06/08 17:00:39 by miyolchy         ###   ########.fr       */
+/*   Created: 2025/06/08 16:46:45 by miyolchy          #+#    #+#             */
+/*   Updated: 2025/06/08 17:00:09 by miyolchy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/headers/instructions.h"
 
-void	swap_a(t_list **a_list, bool print)
+void	reverse_rotate_b(t_list **b_list, bool print)
 {
-	t_list	*first;
-	t_list	*second;
+	t_list	*b_last;
+	t_list	*a_second_last;
 
-	if (!a_list || !*a_list || !(*a_list)->next)
+	if (*b_list == NULL || (*b_list)->next == NULL)
 		return ;
-	first = *a_list;
-	second = first->next;
-	first->next = second->next;
-	second->next = first;
-	*a_list = second;
+	b_last = *b_list;
+	a_second_last = NULL;
+	while (b_last->next != NULL)
+	{
+		a_second_last = b_last;
+		b_last = b_last->next;
+	}
+	b_last->next = *b_list;
+	a_second_last->next = NULL;
+	*b_list = b_last;
 	if (print == true)
-		ft_putstr_fd("sa\n", 1);
+		ft_printf("rrb\n");
 }

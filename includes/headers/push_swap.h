@@ -6,7 +6,7 @@
 /*   By: miyolchy <miyolchy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 18:43:49 by miyolchy          #+#    #+#             */
-/*   Updated: 2025/06/07 16:24:49 by miyolchy         ###   ########.fr       */
+/*   Updated: 2025/06/08 15:31:08 by miyolchy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,5 @@ t_list	*creating_list(int argc, char **argv, t_array *array);
 bool	validity_check(char **array);
 
 void	bubble_sort(int *array, int args_count);
-
-void	swap_a(t_list **a_list);
 
 #endif
