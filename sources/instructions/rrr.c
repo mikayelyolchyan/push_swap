@@ -1,29 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sa.c                                               :+:      :+:    :+:   */
+/*   rrr.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: miyolchy <miyolchy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/07 16:13:54 by miyolchy          #+#    #+#             */
-/*   Updated: 2025/06/08 17:00:39 by miyolchy         ###   ########.fr       */
+/*   Created: 2025/06/08 16:50:58 by miyolchy          #+#    #+#             */
+/*   Updated: 2025/06/08 17:00:22 by miyolchy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/headers/instructions.h"
 
-void	swap_a(t_list **a_list, bool print)
+void	reverse_rotate_a_and_b(t_list **a_list, t_list **b_list)
 {
-	t_list	*first;
-	t_list	*second;
-
-	if (!a_list || !*a_list || !(*a_list)->next)
-		return ;
-	first = *a_list;
-	second = first->next;
-	first->next = second->next;
-	second->next = first;
-	*a_list = second;
-	if (print == true)
-		ft_putstr_fd("sa\n", 1);
+	reverse_rotate_a(a_list, false);
+	reverse_rotate_b(b_list, false);
+	ft_printf("rrr\n");
 }

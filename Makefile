@@ -5,6 +5,7 @@ CC = cc
 C_FLAGS = -Wall -Wextra -Werror -g3 -fsanitize=address
 
 SOURCES_DIR = sources
+INSTRUCTIONS_DIR = $(SOURCES_DIR)/instructions
 HEADER_DIR = includes/headers
 LIBRARIES_DIR = includes/libraries
 
@@ -14,7 +15,12 @@ FT_PRINTF_DIR = $(LIBRARIES_DIR)/ft_printf
 SOURCES = $(SOURCES_DIR)/main.c $(SOURCES_DIR)/free.c \
 			$(SOURCES_DIR)/creating_array.c $(SOURCES_DIR)/validation.c \
 			$(SOURCES_DIR)/bubble_sort.c $(SOURCES_DIR)/creating_list.c \
-			$(SOURCES_DIR)/instructions/sa.c 
+			$(INSTRUCTIONS_DIR)/sa.c $(INSTRUCTIONS_DIR)/sb.c \
+			$(INSTRUCTIONS_DIR)/ss.c $(INSTRUCTIONS_DIR)/pa.c \
+			$(INSTRUCTIONS_DIR)/pb.c $(INSTRUCTIONS_DIR)/ra.c \
+			$(INSTRUCTIONS_DIR)/rb.c $(INSTRUCTIONS_DIR)/rr.c \
+			$(INSTRUCTIONS_DIR)/rra.c $(INSTRUCTIONS_DIR)/rrb.c \
+			$(INSTRUCTIONS_DIR)/rrr.c
 
 OBJECTS = $(SOURCES:%.c=%.o)
 
