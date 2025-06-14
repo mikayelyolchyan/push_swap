@@ -6,7 +6,7 @@
 /*   By: miyolchy <miyolchy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/08 19:06:10 by miyolchy          #+#    #+#             */
-/*   Updated: 2025/06/14 15:14:09 by miyolchy         ###   ########.fr       */
+/*   Updated: 2025/06/14 16:42:22 by miyolchy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,12 @@ void	distribution_of_elements(t_list **a, t_list **b)
 	{
 		if (get_index(*a) <= i)
 		{
-			push_b(a, b);
+			push_b(a, b, 1);
 			i++;
 		}
 		else if (get_index(*a) <= i + chunk_size)
 		{
-			push_b(a, b);
+			push_b(a, b, 1);
 			rotate_b(b, 1);
 			i++;
 		}
@@ -62,7 +62,7 @@ void	return_elements(t_list **a, t_list **b)
 			while (j-- > 0)
 				reverse_rotate_b(b, 1);
 		}
-		push_a(a, b);
+		push_a(a, b, 1);
 	}
 }
 
