@@ -6,7 +6,7 @@
 /*   By: miyolchy <miyolchy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 18:43:49 by miyolchy          #+#    #+#             */
-/*   Updated: 2025/06/08 20:21:33 by miyolchy         ###   ########.fr       */
+/*   Updated: 2025/06/14 12:25:47 by miyolchy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,12 @@ bool	validity_check(char **array);
 
 void	bubble_sort(int *array, int args_count);
 
-void butterfly_sort(t_list **a, t_list **b);
+void	butterfly_sort(t_list **a, t_list **b);
 
-void print_stack(t_list *list);
+void	print_stack(t_list *list);
+
+int		get_chunk_size(int stack_size);
+int		get_index(t_list *node);
+int		find_max_position(t_list *b);
+
 #endif
