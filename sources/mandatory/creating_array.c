@@ -6,11 +6,11 @@
 /*   By: miyolchy <miyolchy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/31 19:06:16 by miyolchy          #+#    #+#             */
-/*   Updated: 2025/06/06 22:20:02 by miyolchy         ###   ########.fr       */
+/*   Updated: 2025/06/14 15:12:03 by miyolchy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/headers/push_swap.h"
+#include "../../includes/headers/push_swap.h"
 
 static int	counting_numbers(int argc, char **argv)
 {

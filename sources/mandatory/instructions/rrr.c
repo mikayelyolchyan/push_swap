@@ -1,41 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   bubble_sort.c                                      :+:      :+:    :+:   */
+/*   rrr.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: miyolchy <miyolchy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/05 19:48:43 by miyolchy          #+#    #+#             */
-/*   Updated: 2025/06/06 22:17:21 by miyolchy         ###   ########.fr       */
+/*   Created: 2025/06/08 16:50:58 by miyolchy          #+#    #+#             */
+/*   Updated: 2025/06/14 15:15:17 by miyolchy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/headers/push_swap.h"
+#include "../../../includes/headers/instructions.h"
 
-static void	args_swap(int *a, int *b)
+void	reverse_rotate_a_and_b(t_list **a_list, t_list **b_list)
 {
-	int	tmp;
-
-	tmp = *a;
-	*a = *b;
-	*b = tmp;
-}
-
-void	bubble_sort(int *array, int args_count)
-{
-	int	i;
-	int	j;
-
-	i = 0;
-	while (i < args_count - 1)
-	{
-		j = 0;
-		while (j < args_count - i - 1)
-		{
-			if (array[j] > array[j + 1])
-				args_swap(&array[j], &array[j + 1]);
-			j++;
-		}
-		i++;
-	}
+	reverse_rotate_a(a_list, false);
+	reverse_rotate_b(b_list, false);
+	ft_printf("rrr\n");
 }

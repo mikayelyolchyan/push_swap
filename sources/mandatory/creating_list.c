@@ -6,11 +6,11 @@
 /*   By: miyolchy <miyolchy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/05 20:24:44 by miyolchy          #+#    #+#             */
-/*   Updated: 2025/06/08 17:06:15 by miyolchy         ###   ########.fr       */
+/*   Updated: 2025/06/14 15:13:52 by miyolchy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/headers/push_swap.h"
+#include "../../includes/headers/push_swap.h"
 
 static t_list	*list_elements_alloc(t_array *array, t_list *list)
 {

@@ -18,7 +18,7 @@ echo -e "\nЗапуск push_swap:"
 ./push_swap $NUMBERS
 
 echo -e "\nПроверка сортировки:"
-./push_swap $NUMBERS | ./checker_linux $NUMBERS
+./push_swap $NUMBERS | ./checker_libux $NUMBERS
 
 echo -e "\nКоличество операций:"
 ./push_swap $NUMBERS | wc -l

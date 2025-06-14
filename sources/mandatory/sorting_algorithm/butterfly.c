@@ -6,12 +6,12 @@
 /*   By: miyolchy <miyolchy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/08 19:06:10 by miyolchy          #+#    #+#             */
-/*   Updated: 2025/06/14 12:23:33 by miyolchy         ###   ########.fr       */
+/*   Updated: 2025/06/14 15:14:09 by miyolchy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/headers/instructions.h"
-#include "../../includes/headers/push_swap.h"
+#include "../../../includes/headers/instructions.h"
+#include "../../../includes/headers/push_swap.h"
 
 void	distribution_of_elements(t_list **a, t_list **b)
 {

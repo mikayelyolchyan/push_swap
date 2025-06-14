@@ -6,12 +6,12 @@
 /*   By: miyolchy <miyolchy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/14 12:40:25 by miyolchy          #+#    #+#             */
-/*   Updated: 2025/06/14 12:55:02 by miyolchy         ###   ########.fr       */
+/*   Updated: 2025/06/14 15:14:17 by miyolchy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/headers/push_swap.h"
-#include "../../includes/headers/instructions.h"
+#include "../../../includes/headers/push_swap.h"
+#include "../../../includes/headers/instructions.h"
 
 void	sort_two(t_list **a)
 {

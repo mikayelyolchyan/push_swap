@@ -6,11 +6,11 @@
 /*   By: miyolchy <miyolchy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/14 12:23:08 by miyolchy          #+#    #+#             */
-/*   Updated: 2025/06/14 12:23:56 by miyolchy         ###   ########.fr       */
+/*   Updated: 2025/06/14 15:14:03 by miyolchy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/headers/push_swap.h"
+#include "../../../includes/headers/push_swap.h"
 
 int	get_index(t_list *node)
 {

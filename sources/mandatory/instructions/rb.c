@@ -1,42 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free.c                                             :+:      :+:    :+:   */
+/*   rb.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: miyolchy <miyolchy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/31 18:57:15 by miyolchy          #+#    #+#             */
-/*   Updated: 2025/06/06 22:32:51 by miyolchy         ###   ########.fr       */
+/*   Created: 2025/06/08 16:17:53 by miyolchy          #+#    #+#             */
+/*   Updated: 2025/06/14 15:14:40 by miyolchy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/headers/push_swap.h"
+#include "../../../includes/headers/instructions.h"
 
-void	free_char_array(char **array)
+void	rotate_b(t_list **b_list, bool print)
 {
-	int	index;
+	t_list	*b_head;
+	t_list	*b_last;
 
-	index = 0;
-	if (array)
-	{
-		while (array[index])
-		{
-			free(array[index]);
-			index++;
-		}
-		free(array);
-	}
-}
-
-void	free_list(t_list *list)
-{
-	t_list	*tmp;
-
-	while (list)
-	{
-		tmp = list->next;
-		free(list->content);
-		free(list);
-		list = tmp;
-	}
+	if (*b_list == NULL || (*b_list)->next == NULL)
+		return ;
+	b_head = *b_list;
+	b_last = ft_lstlast(b_head);
+	*b_list = b_head->next;
+	b_last->next = b_head;
+	b_head->next = NULL;
+	if (print == true)
+		ft_printf("rb\n");
 }
