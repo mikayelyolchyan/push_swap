@@ -6,7 +6,7 @@
 /*   By: miyolchy <miyolchy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/31 20:56:45 by miyolchy          #+#    #+#             */
-/*   Updated: 2025/06/06 22:38:14 by miyolchy         ###   ########.fr       */
+/*   Updated: 2025/06/14 13:34:31 by miyolchy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ static bool	all_args_is_numbers(char **array)
 		if (check_all_str(array, index1, index2, char_index) == false)
 			return (false);
 		numbers = char_to_longlongint(array[index1]);
-		if (numbers >= INT_MAX || numbers <= INT_MIN)
+		if (numbers > INT_MAX || numbers < INT_MIN)
 			return (ft_printf("Error, invalid arguments\n"), false);
 		index1++;
 	}
