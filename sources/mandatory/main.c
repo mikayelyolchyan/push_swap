@@ -6,11 +6,11 @@
 /*   By: miyolchy <miyolchy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 18:43:46 by miyolchy          #+#    #+#             */
-/*   Updated: 2025/06/14 13:27:25 by miyolchy         ###   ########.fr       */
+/*   Updated: 2025/06/14 15:12:09 by miyolchy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/headers/push_swap.h"
+#include "../../includes/headers/push_swap.h"
 
 //void	print_list(t_list *list)
 //{

@@ -1,26 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pb.c                                               :+:      :+:    :+:   */
+/*   ss.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: miyolchy <miyolchy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/08 15:54:18 by miyolchy          #+#    #+#             */
-/*   Updated: 2025/06/08 16:57:53 by miyolchy         ###   ########.fr       */
+/*   Created: 2025/06/08 15:38:18 by miyolchy          #+#    #+#             */
+/*   Updated: 2025/06/14 15:15:27 by miyolchy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/headers/instructions.h"
+#include "../../../includes/headers/instructions.h"
 
-void	push_b(t_list **a_list, t_list **b_list)
+void	swap_a_and_b(t_list **a_list, t_list **b_list)
 {
-	t_list	*a_head;
-
-	if (*a_list == NULL)
-		return ;
-	a_head = *a_list;
-	*a_list = a_head->next;
-	a_head->next = *b_list;
-	*b_list = a_head;
-	ft_printf("pb\n");
+	swap_a(a_list, false);
+	swap_b(b_list, false);
+	ft_putstr_fd("ss\n", 1);
 }

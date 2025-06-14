@@ -1,29 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rb.c                                               :+:      :+:    :+:   */
+/*   rra.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: miyolchy <miyolchy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/08 16:17:53 by miyolchy          #+#    #+#             */
-/*   Updated: 2025/06/08 16:59:05 by miyolchy         ###   ########.fr       */
+/*   Created: 2025/06/08 16:40:22 by miyolchy          #+#    #+#             */
+/*   Updated: 2025/06/14 15:15:10 by miyolchy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/headers/instructions.h"
+#include "../../../includes/headers/instructions.h"
 
-void	rotate_b(t_list **b_list, bool print)
+void	reverse_rotate_a(t_list **a_list, bool print)
 {
-	t_list	*b_head;
-	t_list	*b_last;
+	t_list	*a_last;
+	t_list	*a_second_last;
 
-	if (*b_list == NULL || (*b_list)->next == NULL)
+	if (*a_list == NULL || (*a_list)->next == NULL)
 		return ;
-	b_head = *b_list;
-	b_last = ft_lstlast(b_head);
-	*b_list = b_head->next;
-	b_last->next = b_head;
-	b_head->next = NULL;
+	a_last = *a_list;
+	a_second_last = NULL;
+	while (a_last->next != NULL)
+	{
+		a_second_last = a_last;
+		a_last = a_last->next;
+	}
+	a_last->next = *a_list;
+	a_second_last->next = NULL;
+	*a_list = a_last;
 	if (print == true)
-		ft_printf("rb\n");
+		ft_printf("rra\n");
 }

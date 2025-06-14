@@ -1,26 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pa.c                                               :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: miyolchy <miyolchy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/08 15:44:03 by miyolchy          #+#    #+#             */
-/*   Updated: 2025/06/08 16:58:24 by miyolchy         ###   ########.fr       */
+/*   Created: 2025/02/13 18:28:50 by miyolchy          #+#    #+#             */
+/*   Updated: 2025/06/14 15:03:26 by miyolchy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/headers/instructions.h"
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
-void	push_a(t_list **a_list, t_list **b_list)
-{
-	t_list	*b_head;
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
 
-	if (*b_list == NULL)
-		return ;
-	b_head = *b_list;
-	*b_list = b_head->next;
-	b_head->next = *a_list;
-	*a_list = b_head;
-	ft_printf("pa\n");
-}
+# include <unistd.h>
+# include <stdlib.h>
+
+char	*get_next_line(int fd);
+
+char	*ft_strdup(const char *s);
+char	*ft_strchr(const char *s, int c);
+char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+
+size_t	ft_strlen(const char *s);
+
+#endif

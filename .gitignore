@@ -1,4 +1,4 @@
 *.o
-./push_swap
+push_swap
 .vscode
 .DS_Store

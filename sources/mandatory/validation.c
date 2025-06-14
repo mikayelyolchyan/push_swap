@@ -6,11 +6,11 @@
 /*   By: miyolchy <miyolchy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/31 20:56:45 by miyolchy          #+#    #+#             */
-/*   Updated: 2025/06/14 13:34:31 by miyolchy         ###   ########.fr       */
+/*   Updated: 2025/06/14 15:12:14 by miyolchy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/headers/push_swap.h"
+#include "../../includes/headers/push_swap.h"
 
 static long long int	char_to_longlongint(const char *nptr)
 {

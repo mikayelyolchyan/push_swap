@@ -1,29 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sa.c                                               :+:      :+:    :+:   */
+/*   checker.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: miyolchy <miyolchy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/07 16:13:54 by miyolchy          #+#    #+#             */
-/*   Updated: 2025/06/08 17:00:39 by miyolchy         ###   ########.fr       */
+/*   Created: 2025/06/14 16:05:01 by miyolchy          #+#    #+#             */
+/*   Updated: 2025/06/14 16:07:13 by miyolchy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/headers/instructions.h"
+#ifndef CHECKER_H
+# define CHECKER_H
 
-void	swap_a(t_list **a_list, bool print)
-{
-	t_list	*first;
-	t_list	*second;
+# include "../libraries/libft/libft.h"
+# include "../libraries/ft_printf/ft_printf.h"
 
-	if (!a_list || !*a_list || !(*a_list)->next)
-		return ;
-	first = *a_list;
-	second = first->next;
-	first->next = second->next;
-	second->next = first;
-	*a_list = second;
-	if (print == true)
-		ft_putstr_fd("sa\n", 1);
-}
+# include "push_swap.h"
+
+bool	check_sorted(t_list *a_list);
+void	do_operation(t_list **a_list, t_list **b_list, char *operation);
+
+#endif

@@ -1,37 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   small_sort_utils.c                                 :+:      :+:    :+:   */
+/*   pb.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: miyolchy <miyolchy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/14 12:50:57 by miyolchy          #+#    #+#             */
-/*   Updated: 2025/06/14 12:51:47 by miyolchy         ###   ########.fr       */
+/*   Created: 2025/06/08 15:54:18 by miyolchy          #+#    #+#             */
+/*   Updated: 2025/06/14 15:14:34 by miyolchy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/headers/push_swap.h"
+#include "../../../includes/headers/instructions.h"
 
-int	find_min_pos(t_list *a)
+void	push_b(t_list **a_list, t_list **b_list)
 {
-	int	min;
-	int	pos;
-	int	i;
-	int	min_pos;
+	t_list	*a_head;
 
-	min = ((t_data *)a->content)->number;
-	pos = 0;
-	i = 0;
-	min_pos = 0;
-	while (a)
-	{
-		if (((t_data *)a->content)->number < min)
-		{
-			min = ((t_data *)a->content)->number;
-			min_pos = i;
-		}
-		a = a->next;
-		i++;
-	}
-	return (min_pos);
+	if (*a_list == NULL)
+		return ;
+	a_head = *a_list;
+	*a_list = a_head->next;
+	a_head->next = *b_list;
+	*b_list = a_head;
+	ft_printf("pb\n");
 }

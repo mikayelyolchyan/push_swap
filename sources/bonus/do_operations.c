@@ -1,0 +1,42 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   do_operations.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: miyolchy <miyolchy@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/06/14 16:02:31 by miyolchy          #+#    #+#             */
+/*   Updated: 2025/06/14 16:21:09 by miyolchy         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "../../includes/headers/instructions.h"
+
+void	do_operation(t_list **a_list, t_list **b_list, char *operation)
+{
+	if (ft_strncmp(operation, "sa\n", 3) == 0)
+		swap_a(a_list, 1);
+	else if (ft_strncmp(operation, "sb\n", 3) == 0)
+		swap_b(b_list, 1);
+	else if (ft_strncmp(operation, "ss\n", 3) == 0)
+		swap_a_and_b(a_list, b_list);
+	else if (ft_strncmp(operation, "pa\n", 3) == 0)
+		push_a(a_list, b_list);
+	else if (ft_strncmp(operation, "pb\n", 3) == 0)
+		push_b(a_list, b_list);
+	else if (ft_strncmp(operation, "ra\n", 3) == 0)
+		rotate_a(a_list, 1);
+	else if (ft_strncmp(operation, "rb\n", 3) == 0)
+		rotate_b(b_list, 1);
+	else if (ft_strncmp(operation, "rr\n", 3) == 0)
+		rotate_a_and_b(a_list, b_list);
+	else if (ft_strncmp(operation, "rra\n", 4) == 0)
+		reverse_rotate_a(a_list, 1);
+	else if (ft_strncmp(operation, "rrb\n", 4) == 0)
+		reverse_rotate_b(b_list, 1);
+	else if (ft_strncmp(operation, "rrr\n", 4) == 0)
+		reverse_rotate_a_and_b(a_list, b_list);
+	else
+		ft_printf("Error: Invalid operation '%s'\n", operation);
+	free(operation);
+}

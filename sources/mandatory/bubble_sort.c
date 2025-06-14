@@ -1,29 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sb.c                                               :+:      :+:    :+:   */
+/*   bubble_sort.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: miyolchy <miyolchy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/08 15:34:22 by miyolchy          #+#    #+#             */
-/*   Updated: 2025/06/08 17:00:54 by miyolchy         ###   ########.fr       */
+/*   Created: 2025/06/05 19:48:43 by miyolchy          #+#    #+#             */
+/*   Updated: 2025/06/14 15:13:58 by miyolchy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/headers/instructions.h"
+#include "../../includes/headers/push_swap.h"
 
-void	swap_b(t_list **b_list, bool print)
+static void	args_swap(int *a, int *b)
 {
-	t_list	*first;
-	t_list	*second;
+	int	tmp;
 
-	if (!b_list || !*b_list || !(*b_list)->next)
-		return ;
-	first = *b_list;
-	second = first->next;
-	first->next = second->next;
-	second->next = first;
-	*b_list = second;
-	if (print == true)
-		ft_putstr_fd("sb\n", 1);
+	tmp = *a;
+	*a = *b;
+	*b = tmp;
+}
+
+void	bubble_sort(int *array, int args_count)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (i < args_count - 1)
+	{
+		j = 0;
+		while (j < args_count - i - 1)
+		{
+			if (array[j] > array[j + 1])
+				args_swap(&array[j], &array[j + 1]);
+			j++;
+		}
+		i++;
+	}
 }
