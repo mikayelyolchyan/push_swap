@@ -20,8 +20,11 @@ SOURCES = $(SOURCES_DIR)/main.c $(SOURCES_DIR)/free.c \
 			$(INSTRUCTIONS_DIR)/pb.c $(INSTRUCTIONS_DIR)/ra.c \
 			$(INSTRUCTIONS_DIR)/rb.c $(INSTRUCTIONS_DIR)/rr.c \
 			$(INSTRUCTIONS_DIR)/rra.c $(INSTRUCTIONS_DIR)/rrb.c \
-			$(INSTRUCTIONS_DIR)/rrr.c $(SOURCES_DIR)/sorting_algorithm/butterfly.c \
-			$(SOURCES_DIR)/sorting_algorithm/butterfly_utils.c
+			$(INSTRUCTIONS_DIR)/rrr.c \
+			$(SOURCES_DIR)/sorting_algorithm/butterfly.c \
+			$(SOURCES_DIR)/sorting_algorithm/butterfly_utils.c \
+			$(SOURCES_DIR)/sorting_algorithm/small_sort.c \
+			$(SOURCES_DIR)/sorting_algorithm/small_sort_utils.c \
 
 OBJECTS = $(SOURCES:%.c=%.o)
 

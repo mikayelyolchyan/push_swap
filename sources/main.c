@@ -6,7 +6,7 @@
 /*   By: miyolchy <miyolchy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 18:43:46 by miyolchy          #+#    #+#             */
-/*   Updated: 2025/06/14 12:17:10 by miyolchy         ###   ########.fr       */
+/*   Updated: 2025/06/14 12:46:27 by miyolchy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ int	main(int argc, char **argv)
 	t_list		*a_list;
 	t_list		*b_list;
 	t_array		array;
+	int			size;
 
 	if (argc < 2)
 		return (ft_printf("Error: No arguments provided\n"), 1);
@@ -53,22 +54,11 @@ int	main(int argc, char **argv)
 	if (a_list == NULL)
 		return (ft_printf("List creating error\n"), 1);
 	b_list = NULL;
-	//ft_printf("before \n");
-	//ft_printf("a  ");
-	//print_stack(a_list);
-	//ft_printf("b  ");
-	//print_stack(b_list);
-	//print_list(a_list);
-	//print_list(b_list);
-	// test instructions
-	butterfly_sort(&a_list, &b_list);
-	//ft_printf("\nafter\n");
-	////print_list(a_list);
-	////print_list(b_list);
-	//ft_printf("a  ");
-	//print_stack(a_list);
-	//ft_printf("b  ");
-	//print_stack(b_list);
+	size = ft_lstsize(a_list);
+	if (size >= 2 && size <= 5)
+		sort_small_stack(&a_list, &b_list, size);
+	else
+		butterfly_sort(&a_list, &b_list);
 	free_list(a_list);
 	free_list(b_list);
 	return (0);
