@@ -6,7 +6,7 @@
 /*   By: miyolchy <miyolchy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/14 12:40:25 by miyolchy          #+#    #+#             */
-/*   Updated: 2025/06/14 15:14:17 by miyolchy         ###   ########.fr       */
+/*   Updated: 2025/06/14 16:42:50 by miyolchy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,9 +54,9 @@ void	sort_four(t_list **a, t_list **b)
 	min_pos = find_min_pos(*a);
 	while (min_pos--)
 		rotate_a(a, 1);
-	push_b(a, b);
+	push_b(a, b, 1);
 	sort_three(a);
-	push_a(a, b);
+	push_a(a, b, 1);
 }
 
 void	sort_five(t_list **a, t_list **b)
@@ -66,14 +66,14 @@ void	sort_five(t_list **a, t_list **b)
 	min_pos = find_min_pos(*a);
 	while (min_pos--)
 		rotate_a(a, 1);
-	push_b(a, b);
+	push_b(a, b, 1);
 	min_pos = find_min_pos(*a);
 	while (min_pos--)
 		rotate_a(a, 1);
-	push_b(a, b);
+	push_b(a, b, 1);
 	sort_three(a);
-	push_a(a, b);
-	push_a(a, b);
+	push_a(a, b, 1);
+	push_a(a, b, 1);
 }
 
 void	sort_small_stack(t_list **a, t_list **b, int size)

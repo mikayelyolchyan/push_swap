@@ -6,13 +6,13 @@
 /*   By: miyolchy <miyolchy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/08 15:54:18 by miyolchy          #+#    #+#             */
-/*   Updated: 2025/06/14 15:14:34 by miyolchy         ###   ########.fr       */
+/*   Updated: 2025/06/14 16:40:37 by miyolchy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../includes/headers/instructions.h"
 
-void	push_b(t_list **a_list, t_list **b_list)
+void	push_b(t_list **a_list, t_list **b_list, bool print)
 {
 	t_list	*a_head;
 
@@ -22,5 +22,6 @@ void	push_b(t_list **a_list, t_list **b_list)
 	*a_list = a_head->next;
 	a_head->next = *b_list;
 	*b_list = a_head;
-	ft_printf("pb\n");
+	if (print == true)
+		ft_printf("pb\n");
 }
