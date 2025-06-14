@@ -6,7 +6,7 @@
 /*   By: miyolchy <miyolchy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 18:43:49 by miyolchy          #+#    #+#             */
-/*   Updated: 2025/06/14 12:25:47 by miyolchy         ###   ########.fr       */
+/*   Updated: 2025/06/14 12:53:46 by miyolchy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,5 +51,8 @@ void	print_stack(t_list *list);
 int		get_chunk_size(int stack_size);
 int		get_index(t_list *node);
 int		find_max_position(t_list *b);
+
+void	sort_small_stack(t_list **a, t_list **b, int size);
+int		find_min_pos(t_list *a);
 
 #endif
