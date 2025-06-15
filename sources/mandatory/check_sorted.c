@@ -6,11 +6,11 @@
 /*   By: miyolchy <miyolchy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/14 16:03:40 by miyolchy          #+#    #+#             */
-/*   Updated: 2025/06/14 16:07:40 by miyolchy         ###   ########.fr       */
+/*   Updated: 2025/06/15 12:34:19 by miyolchy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/headers/checker.h"
+#include "../../includes/headers/push_swap.h"
 
 bool	check_sorted(t_list *a_list)
 {
