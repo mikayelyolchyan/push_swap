@@ -30,6 +30,7 @@ MANDATORY_SOURCES = \
 	$(MANDATORY_SOURCES_DIR)/validation.c \
 	$(MANDATORY_SOURCES_DIR)/bubble_sort.c \
 	$(MANDATORY_SOURCES_DIR)/creating_list.c \
+	$(MANDATORY_SOURCES_DIR)/check_sorted.c \
 	$(INSTRUCTIONS_DIR)/sa.c \
 	$(INSTRUCTIONS_DIR)/sb.c \
 	$(INSTRUCTIONS_DIR)/ss.c \
@@ -62,11 +63,11 @@ MANDATORY_SOURCES_NO_MAIN = \
 	$(INSTRUCTIONS_DIR)/rr.c \
 	$(INSTRUCTIONS_DIR)/rra.c \
 	$(INSTRUCTIONS_DIR)/rrb.c \
-	$(INSTRUCTIONS_DIR)/rrr.c \
+	$(INSTRUCTIONS_DIR)/rrr.c 
 
-BONUS_SOURCES = sources/bonus/main.c \
-				sources/bonus/do_operations.c \
-				sources/bonus/check_sorted.c \
+BONUS_SOURCES = $(BONUS_SOURCES_DIR)/main.c \
+				$(BONUS_SOURCES_DIR)/do_operations.c \
+				$(MANDATORY_SOURCES_DIR)/check_sorted.c 
 
 BONUS_OBJECTS = $(BONUS_SOURCES:%.c=%.o)
 

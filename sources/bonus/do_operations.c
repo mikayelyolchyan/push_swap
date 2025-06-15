@@ -6,7 +6,7 @@
 /*   By: miyolchy <miyolchy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/14 16:02:31 by miyolchy          #+#    #+#             */
-/*   Updated: 2025/06/14 16:44:59 by miyolchy         ###   ########.fr       */
+/*   Updated: 2025/06/15 12:23:23 by miyolchy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,6 @@ void	do_operation(t_list **a_list, t_list **b_list, char *operation)
 	else if (ft_strncmp(operation, "rrr\n", 4) == 0)
 		reverse_rotate_a_and_b(a_list, b_list, 0);
 	else
-		ft_printf("Error: Invalid operation '%s'\n", operation);
+		ft_printf("Error\n", operation);
 	free(operation);
 }

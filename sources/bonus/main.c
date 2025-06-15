@@ -6,7 +6,7 @@
 /*   By: miyolchy <miyolchy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/14 15:29:30 by miyolchy          #+#    #+#             */
-/*   Updated: 2025/06/14 16:06:35 by miyolchy         ###   ########.fr       */
+/*   Updated: 2025/06/15 12:26:06 by miyolchy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ int	main(int argc, char **argv)
 	char		*operation;
 
 	if (argc < 2)
-		return (ft_printf("Error: No arguments provided\n"), 1);
+		return (1);
 	a_list = creating_list(argc, argv, &array);
 	if (a_list == NULL)
-		return (ft_printf("List creating error\n"), 1);
+		return (ft_printf("Error\n"), 1);
 	b_list = NULL;
 	operation = get_next_line(0);
 	while (operation != NULL)
