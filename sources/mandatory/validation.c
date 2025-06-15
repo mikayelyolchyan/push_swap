@@ -6,7 +6,7 @@
 /*   By: miyolchy <miyolchy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/31 20:56:45 by miyolchy          #+#    #+#             */
-/*   Updated: 2025/06/15 14:24:19 by miyolchy         ###   ########.fr       */
+/*   Updated: 2025/06/15 14:34:05 by miyolchy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ static bool	all_args_is_numbers(char **array)
 			index2++;
 			if (!array[index1][index2] || !ft_isdigit(array[index1][index2]))
 				return (false);
-		}	
+		}
 		if (check_all_str(array, index1, index2, char_index) == false)
 			return (false);
 		numbers = char_to_longlongint(array[index1]);

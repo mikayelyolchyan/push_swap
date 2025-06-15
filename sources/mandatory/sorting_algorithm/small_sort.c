@@ -6,7 +6,7 @@
 /*   By: miyolchy <miyolchy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/14 12:40:25 by miyolchy          #+#    #+#             */
-/*   Updated: 2025/06/14 16:42:50 by miyolchy         ###   ########.fr       */
+/*   Updated: 2025/06/15 14:34:21 by miyolchy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,10 +50,16 @@ void	sort_three(t_list **a)
 void	sort_four(t_list **a, t_list **b)
 {
 	int	min_pos;
+	int	size;
 
+	size = ft_lstsize(*a);
 	min_pos = find_min_pos(*a);
-	while (min_pos--)
-		rotate_a(a, 1);
+	if (min_pos <= size / 2)
+		while (min_pos--)
+			rotate_a(a, 1);
+	else
+		while (min_pos++ < size)
+			reverse_rotate_a(a, 1);
 	push_b(a, b, 1);
 	sort_three(a);
 	push_a(a, b, 1);
@@ -62,14 +68,25 @@ void	sort_four(t_list **a, t_list **b)
 void	sort_five(t_list **a, t_list **b)
 {
 	int	min_pos;
+	int	size;
 
+	size = ft_lstsize(*a);
 	min_pos = find_min_pos(*a);
-	while (min_pos--)
-		rotate_a(a, 1);
+	if (min_pos <= size / 2)
+		while (min_pos--)
+			rotate_a(a, 1);
+	else
+		while (min_pos++ < size)
+			reverse_rotate_a(a, 1);
 	push_b(a, b, 1);
+	size = ft_lstsize(*a);
 	min_pos = find_min_pos(*a);
-	while (min_pos--)
-		rotate_a(a, 1);
+	if (min_pos <= size / 2)
+		while (min_pos--)
+			rotate_a(a, 1);
+	else
+		while (min_pos++ < size)
+			reverse_rotate_a(a, 1);
 	push_b(a, b, 1);
 	sort_three(a);
 	push_a(a, b, 1);
