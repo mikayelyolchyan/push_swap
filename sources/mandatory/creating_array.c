@@ -6,7 +6,7 @@
 /*   By: miyolchy <miyolchy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/31 19:06:16 by miyolchy          #+#    #+#             */
-/*   Updated: 2025/06/14 15:12:03 by miyolchy         ###   ########.fr       */
+/*   Updated: 2025/06/15 10:17:26 by miyolchy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static int	counting_numbers(int argc, char **argv)
 	{
 		tmp_array = ft_split(argv[i], ' ');
 		if (!tmp_array)
-			return (ft_printf("Error: ft_split failed\n"), 1);
+			return (1);
 		j = 0;
 		while (tmp_array[j])
 			j++;
@@ -49,8 +49,7 @@ static char	**fill_array(int argc, char **argv, char **array)
 	{
 		tmp_array = ft_split(argv[i], ' ');
 		if (!tmp_array)
-			return (free_char_array(array), \
-				ft_printf("Error: ft_split failed\n"), NULL);
+			return (free_char_array(array), NULL);
 		index2 = 0;
 		while (tmp_array[index2])
 			array[index1++] = tmp_array[index2++];
@@ -68,7 +67,7 @@ char	**creating_char_array(int argc, char **argv, char **array)
 	total_numbers = counting_numbers(argc, argv);
 	array = malloc(sizeof(char *) * (total_numbers + 1));
 	if (!array)
-		return (ft_printf("Error: args_char_array malloc failed\n"), NULL);
+		return (NULL);
 	array = fill_array(argc, argv, array);
 	if (array == NULL)
 		return (NULL);

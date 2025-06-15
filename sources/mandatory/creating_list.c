@@ -6,7 +6,7 @@
 /*   By: miyolchy <miyolchy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/05 20:24:44 by miyolchy          #+#    #+#             */
-/*   Updated: 2025/06/14 15:13:52 by miyolchy         ###   ########.fr       */
+/*   Updated: 2025/06/15 10:16:56 by miyolchy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static t_list	*list_elements_alloc(t_array *array, t_list *list)
 	{
 		node_data = malloc(sizeof(t_data));
 		if (!node_data)
-			return (ft_printf("t_data allocation error\n"), NULL);
+			return (NULL);
 		node_data->number = array->int_args_array[index];
 		node_data->index = -1;
 		ft_lstadd_back(&list, ft_lstnew(node_data));

@@ -6,7 +6,7 @@
 /*   By: miyolchy <miyolchy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/31 20:56:45 by miyolchy          #+#    #+#             */
-/*   Updated: 2025/06/14 15:12:14 by miyolchy         ###   ########.fr       */
+/*   Updated: 2025/06/15 10:17:48 by miyolchy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ static bool	check_all_str(char **array, int index1, int index2, char char_index)
 		if (ft_isdigit((int)char_index))
 			index2++;
 		else
-			return (ft_printf("Error, invalid arguments\n"), false);
+			return (false);
 	}
 	return (true);
 }
@@ -69,7 +69,7 @@ static bool	all_args_is_numbers(char **array)
 			return (false);
 		numbers = char_to_longlongint(array[index1]);
 		if (numbers > INT_MAX || numbers < INT_MIN)
-			return (ft_printf("Error, invalid arguments\n"), false);
+			return (false);
 		index1++;
 	}
 	return (true);
@@ -91,7 +91,7 @@ static bool	no_repeating_numbers(char **array)
 		{
 			number2 = char_to_longlongint(array[index2]);
 			if (number1 == number2)
-				return (ft_printf("Error, invalid arguments\n"), false);
+				return (false);
 			index2++;
 		}
 		index1++;
