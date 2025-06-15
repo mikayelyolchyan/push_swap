@@ -6,7 +6,7 @@
 /*   By: miyolchy <miyolchy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 18:43:46 by miyolchy          #+#    #+#             */
-/*   Updated: 2025/06/14 15:12:09 by miyolchy         ###   ########.fr       */
+/*   Updated: 2025/06/15 10:16:22 by miyolchy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,10 @@ int	main(int argc, char **argv)
 	int			size;
 
 	if (argc < 2)
-		return (ft_printf("Error: No arguments provided\n"), 1);
+		return (ft_printf("Error\n"), 1);
 	a_list = creating_list(argc, argv, &array);
 	if (a_list == NULL)
-		return (ft_printf("List creating error\n"), 1);
+		return (ft_printf("Error\n"), 1);
 	b_list = NULL;
 	size = ft_lstsize(a_list);
 	if (size >= 2 && size <= 5)
