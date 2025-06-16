@@ -6,13 +6,13 @@
 /*   By: miyolchy <miyolchy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/14 16:02:31 by miyolchy          #+#    #+#             */
-/*   Updated: 2025/06/15 12:23:23 by miyolchy         ###   ########.fr       */
+/*   Updated: 2025/06/16 17:02:23 by miyolchy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/headers/instructions.h"
 
-void	do_operation(t_list **a_list, t_list **b_list, char *operation)
+bool	do_operation(t_list **a_list, t_list **b_list, char *operation)
 {
 	if (ft_strncmp(operation, "sa\n", 3) == 0)
 		swap_a(a_list, 0);
@@ -37,6 +37,6 @@ void	do_operation(t_list **a_list, t_list **b_list, char *operation)
 	else if (ft_strncmp(operation, "rrr\n", 4) == 0)
 		reverse_rotate_a_and_b(a_list, b_list, 0);
 	else
-		ft_printf("Error\n", operation);
-	free(operation);
+		return (ft_printf("Error\n"), false);
+	return (free(operation), true);
 }

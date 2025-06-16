@@ -6,7 +6,7 @@
 /*   By: miyolchy <miyolchy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/14 15:29:30 by miyolchy          #+#    #+#             */
-/*   Updated: 2025/06/15 12:26:06 by miyolchy         ###   ########.fr       */
+/*   Updated: 2025/06/16 17:01:44 by miyolchy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,8 @@ int	main(int argc, char **argv)
 	operation = get_next_line(0);
 	while (operation != NULL)
 	{
-		do_operation(&a_list, &b_list, operation);
+		if (do_operation(&a_list, &b_list, operation) == false)
+			return (free_list(a_list), free_list(b_list), 1);
 		operation = get_next_line(0);
 	}
 	if (check_sorted(a_list) == 1 && b_list == NULL)

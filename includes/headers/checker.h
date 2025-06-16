@@ -6,7 +6,7 @@
 /*   By: miyolchy <miyolchy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/14 16:05:01 by miyolchy          #+#    #+#             */
-/*   Updated: 2025/06/15 12:28:34 by miyolchy         ###   ########.fr       */
+/*   Updated: 2025/06/16 17:00:51 by miyolchy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,6 @@
 
 # include "push_swap.h"
 
-void	do_operation(t_list **a_list, t_list **b_list, char *operation);
+bool	do_operation(t_list **a_list, t_list **b_list, char *operation);
 
 #endif
