@@ -1,29 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_hex_lower.c                               :+:      :+:    :+:   */
+/*   ft_dprint_unsigned.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: miyolchy <miyolchy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/01 00:41:21 by miyolchy          #+#    #+#             */
-/*   Updated: 2025/02/01 02:00:31 by miyolchy         ###   ########.fr       */
+/*   Created: 2025/02/01 00:19:41 by miyolchy          #+#    #+#             */
+/*   Updated: 2025/06/16 17:23:20 by miyolchy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "ft_dprintf.h"
 
-static int	unsigned_to_hex(unsigned int number, const char *base, int fd)
+static int	digits_count(unsigned int n)
 {
-	int		size;
+	int	i;
 
-	size = 0;
-	if (number >= 16)
-		size = size + unsigned_to_hex(number / 16, base, fd);
-	ft_putchar_fd(base[number % 16], fd);
-	return (++size);
+	i = 0;
+	if (n == 0)
+		++i;
+	while (n != 0)
+	{
+		n = n / 10;
+		i++;
+	}
+	return (i);
 }
 
-int	print_hex_lower(unsigned int number, int fd)
+static void	print_nbr(unsigned int n, int fd)
 {
-	return (unsigned_to_hex(number, "0123456789abcdef", fd));
+	char	c;
+
+	if (n >= 10)
+		print_nbr(n / 10, fd);
+	c = (n % 10) + '0';
+	ft_putchar_fd(c, fd);
+}
+
+int	print_unsigned(unsigned int number, int fd)
+{
+	print_nbr(number, fd);
+	return (digits_count(number));
 }

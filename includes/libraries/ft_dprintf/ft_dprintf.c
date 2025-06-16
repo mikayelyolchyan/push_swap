@@ -1,27 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_str.c                                     :+:      :+:    :+:   */
+/*   ft_dprintf.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: miyolchy <miyolchy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/31 23:28:28 by miyolchy          #+#    #+#             */
-/*   Updated: 2025/02/01 02:13:24 by miyolchy         ###   ########.fr       */
+/*   Created: 2025/01/31 00:10:41 by miyolchy          #+#    #+#             */
+/*   Updated: 2025/06/16 17:16:59 by miyolchy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "ft_dprintf.h"
 
-int	print_str(char *str, int fd)
+int	ft_dprintf(int fd, const char *format, ...)
 {
-	if (str)
+	va_list	args;
+	int		size;
+
+	size = 0;
+	va_start(args, format);
+	if (!format || !*format)
+		return (0);
+	while (*format)
 	{
-		ft_putstr_fd(str, fd);
-		return (ft_strlen(str));
+		if (*format == '%')
+		{
+			++format;
+			size = size + ft_switch(*format, args, fd);
+		}
+		else
+		{
+			++size;
+			ft_putchar_fd(*format, fd);
+		}
+		++format;
 	}
-	else
-	{
-		ft_putstr_fd("(null)", fd);
-		return (ft_strlen("(null)"));
-	}
+	va_end(args);
+	return (size);
 }

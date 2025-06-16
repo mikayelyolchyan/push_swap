@@ -6,7 +6,7 @@
 /*   By: miyolchy <miyolchy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 18:43:49 by miyolchy          #+#    #+#             */
-/*   Updated: 2025/06/15 12:27:53 by miyolchy         ###   ########.fr       */
+/*   Updated: 2025/06/16 17:18:27 by miyolchy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define PUSH_SWAP_H
 
 # include "../libraries/libft/libft.h"
-# include "../libraries/ft_printf/ft_printf.h"
+# include "../libraries/ft_dprintf/ft_dprintf.h"
 
 # include <stdbool.h>
 

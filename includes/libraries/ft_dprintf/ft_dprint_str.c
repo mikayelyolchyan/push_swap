@@ -1,44 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_unsigned.c                                :+:      :+:    :+:   */
+/*   ft_dprint_str.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: miyolchy <miyolchy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/01 00:19:41 by miyolchy          #+#    #+#             */
-/*   Updated: 2025/02/01 01:37:27 by miyolchy         ###   ########.fr       */
+/*   Created: 2025/01/31 23:28:28 by miyolchy          #+#    #+#             */
+/*   Updated: 2025/06/16 17:23:18 by miyolchy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "ft_dprintf.h"
 
-static int	digits_count(unsigned int n)
+int	print_str(char *str, int fd)
 {
-	int	i;
-
-	i = 0;
-	if (n == 0)
-		++i;
-	while (n != 0)
+	if (str)
 	{
-		n = n / 10;
-		i++;
+		ft_putstr_fd(str, fd);
+		return (ft_strlen(str));
 	}
-	return (i);
-}
-
-static void	print_nbr(unsigned int n, int fd)
-{
-	char	c;
-
-	if (n >= 10)
-		print_nbr(n / 10, fd);
-	c = (n % 10) + '0';
-	ft_putchar_fd(c, fd);
-}
-
-int	print_unsigned(unsigned int number, int fd)
-{
-	print_nbr(number, fd);
-	return (digits_count(number));
+	else
+	{
+		ft_putstr_fd("(null)", fd);
+		return (ft_strlen("(null)"));
+	}
 }

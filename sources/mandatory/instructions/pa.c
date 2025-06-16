@@ -6,7 +6,7 @@
 /*   By: miyolchy <miyolchy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/08 15:44:03 by miyolchy          #+#    #+#             */
-/*   Updated: 2025/06/14 16:40:21 by miyolchy         ###   ########.fr       */
+/*   Updated: 2025/06/16 17:19:26 by miyolchy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,5 @@ void	push_a(t_list **a_list, t_list **b_list, bool print)
 	b_head->next = *a_list;
 	*a_list = b_head;
 	if (print == true)
-		ft_printf("pa\n");
+		ft_dprintf(1, "pa\n");
 }

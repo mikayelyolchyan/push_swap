@@ -1,34 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_int.c                                     :+:      :+:    :+:   */
+/*   ft_dprint_hex_upper.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: miyolchy <miyolchy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/31 23:28:28 by miyolchy          #+#    #+#             */
-/*   Updated: 2025/02/01 01:31:51 by miyolchy         ###   ########.fr       */
+/*   Created: 2025/02/01 00:41:21 by miyolchy          #+#    #+#             */
+/*   Updated: 2025/06/16 17:23:12 by miyolchy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "ft_dprintf.h"
 
-static int	digits_count(int n)
+static int	unsigned_to_hex(unsigned int number, const char *base, int fd)
 {
-	int	i;
+	int		size;
 
-	i = 0;
-	if (n <= 0)
-		i++;
-	while (n != 0)
-	{
-		n = n / 10;
-		i++;
-	}
-	return (i);
+	size = 0;
+	if (number >= 16)
+		size = size + unsigned_to_hex(number / 16, base, fd);
+	ft_putchar_fd(base[number % 16], fd);
+	return (++size);
 }
 
-int	print_int(int number, int fd)
+int	print_hex_upper(unsigned int number, int fd)
 {
-	ft_putnbr_fd(number, fd);
-	return (digits_count(number));
+	return (unsigned_to_hex(number, "0123456789ABCDEF", fd));
 }

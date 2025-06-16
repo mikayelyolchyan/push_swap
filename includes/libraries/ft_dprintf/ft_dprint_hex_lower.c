@@ -1,42 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_dprint_hex_lower.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: miyolchy <miyolchy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/31 00:10:41 by miyolchy          #+#    #+#             */
-/*   Updated: 2025/02/01 20:49:39 by miyolchy         ###   ########.fr       */
+/*   Created: 2025/02/01 00:41:21 by miyolchy          #+#    #+#             */
+/*   Updated: 2025/06/16 17:23:03 by miyolchy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "ft_dprintf.h"
 
-int	ft_printf(const char *format, ...)
+static int	unsigned_to_hex(unsigned int number, const char *base, int fd)
 {
-	va_list	args;
 	int		size;
-	int		fd;
 
 	size = 0;
-	fd = 1;
-	va_start(args, format);
-	if (!format || !*format)
-		return (0);
-	while (*format)
-	{
-		if (*format == '%')
-		{
-			++format;
-			size = size + ft_switch(*format, args, fd);
-		}
-		else
-		{
-			++size;
-			ft_putchar_fd(*format, fd);
-		}
-		++format;
-	}
-	va_end(args);
-	return (size);
+	if (number >= 16)
+		size = size + unsigned_to_hex(number / 16, base, fd);
+	ft_putchar_fd(base[number % 16], fd);
+	return (++size);
+}
+
+int	print_hex_lower(unsigned int number, int fd)
+{
+	return (unsigned_to_hex(number, "0123456789abcdef", fd));
 }

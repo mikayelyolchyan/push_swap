@@ -6,7 +6,7 @@
 /*   By: miyolchy <miyolchy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/08 16:46:45 by miyolchy          #+#    #+#             */
-/*   Updated: 2025/06/14 15:15:13 by miyolchy         ###   ########.fr       */
+/*   Updated: 2025/06/16 17:20:02 by miyolchy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,5 @@ void	reverse_rotate_b(t_list **b_list, bool print)
 	a_second_last->next = NULL;
 	*b_list = b_last;
 	if (print == true)
-		ft_printf("rrb\n");
+		ft_dprintf(1, "rrb\n");
 }

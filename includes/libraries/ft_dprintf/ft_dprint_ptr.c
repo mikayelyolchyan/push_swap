@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_hex_upper.c                               :+:      :+:    :+:   */
+/*   ft_dprint_ptr.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: miyolchy <miyolchy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/01 00:41:21 by miyolchy          #+#    #+#             */
-/*   Updated: 2025/02/01 01:59:04 by miyolchy         ###   ########.fr       */
+/*   Created: 2025/02/01 01:12:14 by miyolchy          #+#    #+#             */
+/*   Updated: 2025/06/16 17:23:16 by miyolchy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "ft_dprintf.h"
 
-static int	unsigned_to_hex(unsigned int number, const char *base, int fd)
+static int	us_to_hex(unsigned long number, const char *base, int fd)
 {
 	int		size;
 
 	size = 0;
 	if (number >= 16)
-		size = size + unsigned_to_hex(number / 16, base, fd);
+		size = size + us_to_hex(number / 16, base, fd);
 	ft_putchar_fd(base[number % 16], fd);
 	return (++size);
 }
 
-int	print_hex_upper(unsigned int number, int fd)
+int	print_ptr(void *ptr, const char *base, int fd)
 {
-	return (unsigned_to_hex(number, "0123456789ABCDEF", fd));
+	return (print_str("0x", fd) + us_to_hex((unsigned long)ptr, base, fd));
 }

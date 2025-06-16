@@ -6,7 +6,7 @@
 /*   By: miyolchy <miyolchy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/08 15:34:22 by miyolchy          #+#    #+#             */
-/*   Updated: 2025/06/14 15:15:24 by miyolchy         ###   ########.fr       */
+/*   Updated: 2025/06/16 17:20:40 by miyolchy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,5 @@ void	swap_b(t_list **b_list, bool print)
 	second->next = first;
 	*b_list = second;
 	if (print == true)
-		ft_putstr_fd("sb\n", 1);
+		ft_dprintf(1, "sb\n");
 }

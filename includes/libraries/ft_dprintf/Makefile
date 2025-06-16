@@ -1,4 +1,4 @@
-NAME = libftprintf.a
+NAME = libftdprintf.a
 
 CC = cc
 
@@ -6,8 +6,8 @@ CFLAGS = -Wall -Wextra -Werror -I../libft
 
 AR = ar -rcs
 
-SRCS = ft_printf.c ft_switch.c ft_print_char.c ft_print_str.c ft_print_int.c ft_print_unsigned.c \
-		ft_print_hex_lower.c ft_print_hex_upper.c ft_print_ptr.c
+SRCS = ft_dprintf.c ft_dswitch.c ft_dprint_char.c ft_dprint_str.c ft_dprint_int.c ft_dprint_unsigned.c \
+		ft_dprint_hex_lower.c ft_dprint_hex_upper.c ft_dprint_ptr.c
 
 OBJS = $(SRCS:.c=.o)
 
@@ -25,7 +25,7 @@ $(NAME): $(OBJS) $(LIBFT)
 	cp $(LIBFT) $(NAME)
 	$(AR) $(NAME) $(OBJS)
 
-%.o: %.c ft_printf.h
+%.o: %.c ft_dprintf.h
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:

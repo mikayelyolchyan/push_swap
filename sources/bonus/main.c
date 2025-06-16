@@ -6,7 +6,7 @@
 /*   By: miyolchy <miyolchy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/14 15:29:30 by miyolchy          #+#    #+#             */
-/*   Updated: 2025/06/16 17:01:44 by miyolchy         ###   ########.fr       */
+/*   Updated: 2025/06/16 17:37:52 by miyolchy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ int	main(int argc, char **argv)
 	char		*operation;
 
 	if (argc < 2)
-		return (1);
+		return (0);
 	a_list = creating_list(argc, argv, &array);
 	if (a_list == NULL)
-		return (ft_printf("Error\n"), 1);
+		return (ft_dprintf(2, "Error\n"), 1);
 	b_list = NULL;
 	operation = get_next_line(0);
 	while (operation != NULL)
@@ -34,9 +34,9 @@ int	main(int argc, char **argv)
 		operation = get_next_line(0);
 	}
 	if (check_sorted(a_list) == 1 && b_list == NULL)
-		ft_printf("OK\n");
+		ft_dprintf(1, "OK\n");
 	else
-		ft_printf("KO\n");
+		ft_dprintf(1, "KO\n");
 	free_list(a_list);
 	free_list(b_list);
 	return (0);

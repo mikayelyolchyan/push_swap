@@ -2,7 +2,7 @@ NAME1 = push_swap
 NAME2 = checker
 
 CC = cc
-C_FLAGS = -Wall -Wextra -Werror -g3 -fsanitize=address
+C_FLAGS = -Wall -Wextra -Werror # -g3 -fsanitize=address
 
 MANDATORY_SOURCES_DIR = sources/mandatory
 BONUS_SOURCES_DIR = sources/bonus
@@ -11,14 +11,14 @@ HEADER_DIR = includes/headers
 LIBRARIES_DIR = includes/libraries
 
 LIBFT_DIR = $(LIBRARIES_DIR)/libft
-FT_PRINTF_DIR = $(LIBRARIES_DIR)/ft_printf
+FT_PRINTF_DIR = $(LIBRARIES_DIR)/ft_dprintf
 GET_NEXT_LINE_DIR = $(LIBRARIES_DIR)/get_next_line
 
 LIBFT = $(LIBFT_DIR)/libft.a
-FT_PRINTF = $(FT_PRINTF_DIR)/libftprintf.a
+FT_PRINTF = $(FT_PRINTF_DIR)/libftdprintf.a
 
 LIBFT_FLAGS = -L$(LIBFT_DIR) -lft
-FT_PRINTF_FLAGS = -L$(FT_PRINTF_DIR) -lftprintf
+FT_PRINTF_FLAGS = -L$(FT_PRINTF_DIR) -lftdprintf
 
 HEADER_FLAGS = -I$(HEADER_DIR) -I$(LIBFT_DIR) -I$(FT_PRINTF_DIR)
 BONUS_HEADER_FLAGS = -I$(HEADER_DIR) -I$(LIBFT_DIR) -I$(FT_PRINTF_DIR) -I$(GET_NEXT_LINE_DIR)
