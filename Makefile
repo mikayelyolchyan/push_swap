@@ -28,6 +28,7 @@ MANDATORY_SOURCES = \
 	$(MANDATORY_SOURCES_DIR)/free.c \
 	$(MANDATORY_SOURCES_DIR)/creating_array.c \
 	$(MANDATORY_SOURCES_DIR)/validation.c \
+	$(MANDATORY_SOURCES_DIR)/validation_utils.c \
 	$(MANDATORY_SOURCES_DIR)/bubble_sort.c \
 	$(MANDATORY_SOURCES_DIR)/creating_list.c \
 	$(MANDATORY_SOURCES_DIR)/check_sorted.c \
@@ -51,6 +52,7 @@ MANDATORY_SOURCES_NO_MAIN = \
 	$(MANDATORY_SOURCES_DIR)/free.c \
 	$(MANDATORY_SOURCES_DIR)/creating_array.c \
 	$(MANDATORY_SOURCES_DIR)/validation.c \
+	$(MANDATORY_SOURCES_DIR)/validation_utils.c \
 	$(MANDATORY_SOURCES_DIR)/bubble_sort.c \
 	$(MANDATORY_SOURCES_DIR)/creating_list.c \
 	$(INSTRUCTIONS_DIR)/sa.c \
