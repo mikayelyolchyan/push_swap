@@ -6,7 +6,7 @@
 /*   By: miyolchy <miyolchy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/18 22:31:28 by miyolchy          #+#    #+#             */
-/*   Updated: 2025/06/18 22:39:57 by miyolchy         ###   ########.fr       */
+/*   Updated: 2025/06/19 18:01:45 by miyolchy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,6 @@ bool	is_valid_int(char *str)
 	if (!*str || !ft_isdigit((int)*str))
 		return (false);
 	number = char_to_longlongint(start);
-	//ft_dprintf(1, "%d\n", number);
 	if (number < INT_MIN || number > INT_MAX)
 		return (false);
 	return (true);
